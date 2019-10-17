@@ -237,9 +237,9 @@ public class RangeSliderUI extends BasicSliderUI {
 			}
 			uppDrag = false;
 			if(Pressed_low) {
+				offset = e.getX() - thumbRect.x;
 				loweDrag = true;
 				uppSel = false;
-				offset = e.getX() - thumbRect.x;
 				return;
 			}
 			loweDrag = false;
@@ -256,12 +256,13 @@ public class RangeSliderUI extends BasicSliderUI {
 		@Override
 		public void mouseDragged(MouseEvent e) {
 			int milieucurseur;
-			if (!loweDrag && !uppDrag) {
-				return;
-			}
 			if (!slider.isEnabled()) {
 				return;
 			}
+			if (!loweDrag && !uppDrag) {
+				return;
+			}
+
 			slider.setValueIsAdjusting(true);
 			if (loweDrag) {
 				int hm = xPositionForValue(slider.getMaximum() -slider.getExtent());
@@ -270,7 +271,8 @@ public class RangeSliderUI extends BasicSliderUI {
 				int upptrack = lowertrack + (trackRect.width - 1);
 				if (drawInverted()) {lowertrack = hm;}
 				else {upptrack = hm;}
-				milieucurseur = Math.min(Math.max(e.getX() - offset, lowertrack - thumbRect.width / 2), upptrack - thumbRect.width / 2) + thumbRect.width / 2;
+				Gauchecurseur = Math.min(Math.max(Gauchecurseur, lowertrack - thumbRect.width / 2), upptrack - thumbRect.width / 2);
+				milieucurseur = Gauchecurseur + thumbRect.width / 2;
 				int droitecurseur = Gauchecurseur + thumbRect.width;
 				if (valueForXPosition(droitecurseur) < ((RangeSlider) slider).getUpperValue()) {
 					setThumbLocation(Gauchecurseur, thumbRect.y);
@@ -285,7 +287,7 @@ public class RangeSliderUI extends BasicSliderUI {
 				if (drawInverted()){lowertrack = hm;}
 				else{upptrack = hm;}
 				Gauchecurseur = Math.min(Math.max(Gauchecurseur, lowertrack - rec_upp.width / 2), upptrack - rec_upp.width / 2);
-				int droitecurseur = Gauchecurseur;
+				int droitecurseur = Gauchecurseur + 2;
 				milieucurseur = droitecurseur + rec_upp.width / 2;
 				if (valueForXPosition(Gauchecurseur) > slider.getValue()) {
 					setUpperThumbLocation(droitecurseur, rec_upp.y);
@@ -294,6 +296,7 @@ public class RangeSliderUI extends BasicSliderUI {
 			}
 		}
 	}
+
 
 	public class ChangeHandler implements ChangeListener {
 		public void stateChanged(ChangeEvent arg0) {
