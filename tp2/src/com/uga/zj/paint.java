@@ -47,45 +47,50 @@ class Paint extends JFrame {
 			panel.addMouseMotionListener(tool);
 		}
 		public void mouseClicked(MouseEvent e) {
+		}
+		public void mouseEntered(MouseEvent e) {}
+		public void mouseExited(MouseEvent e) {}
+		public void mousePressed(MouseEvent e) {
 			switch (e.getButton()) {
 				case 1:
-					if(menu!=null && menu.active==true){
-						int number = menu.getSelectedItem(e.getPoint());
-						switch (number) {
-							case 0:
-								Point cur = e.getPoint();
-								menu2 = new MarkingMenu(listColor, cur);
-								menu.active = false;
-								panel.repaint();
-								break;
-								default:
-						}
-					}
-					else if(menu!=null && menu.active==false && menu2!=null && menu2.active == true){
-						int number = menu2.getSelectedItem(e.getPoint());
-						switch(number){
-							case 0:
-								color = Color.BLACK;
-								j.setSelectedIndex(0);
-								break;
-							case 1:
-								color = Color.RED;
-								j.setSelectedIndex(2);
-								break;
-							case -2:
-								color = Color.YELLOW;
-								j.setSelectedIndex(1);
-								break;
-							case -1:
-								color = Color.BLUE;
-								j.setSelectedIndex(3);
-								break;
-							default:
-						}
-						menu = null;
-						menu2 = null;
-						panel.repaint();
-					}
+					o = e.getPoint();
+//					if(menu!=null && menu.active==true){
+//						int number = menu.getSelectedItem(e.getPoint());
+//						switch (number) {
+//							case 0:
+//								Point cur = e.getPoint();
+//								menu2 = new MarkingMenu(listColor, cur);
+//								menu.active = false;
+//								panel.repaint();
+//								break;
+//								default:
+//						}
+//					}
+//					else if(menu!=null && menu.active==false && menu2!=null && menu2.active == true){
+//						int number = menu2.getSelectedItem(e.getPoint());
+//						switch(number){
+//							case 0:
+//								color = Color.BLACK;
+//								j.setSelectedIndex(0);
+//								break;
+//							case 1:
+//								color = Color.RED;
+//								j.setSelectedIndex(2);
+//								break;
+//							case -2:
+//								color = Color.YELLOW;
+//								j.setSelectedIndex(1);
+//								break;
+//							case -1:
+//								color = Color.BLUE;
+//								j.setSelectedIndex(3);
+//								break;
+//							default:
+//						}
+//						menu = null;
+//						menu2 = null;
+//						panel.repaint();
+//					}
 					break;
 
 				case 3:
@@ -103,9 +108,6 @@ class Paint extends JFrame {
 				default:
 			}
 		}
-		public void mouseEntered(MouseEvent e) {}
-		public void mouseExited(MouseEvent e) {}
-		public void mousePressed(MouseEvent e) { o = e.getPoint(); }
 		public void mouseReleased(MouseEvent e) { shape = null; }
 		public void mouseDragged(MouseEvent e) {}
 		public void mouseMoved(MouseEvent e) {

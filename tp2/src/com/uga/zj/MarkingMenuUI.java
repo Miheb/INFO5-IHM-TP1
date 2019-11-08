@@ -17,7 +17,7 @@ public class MarkingMenuUI {
         int d = r * 2;
         g.setColor(Color.GRAY);
         g.fillOval(x - r, y - r, d, d);
-        g.setColor(Color.BLACK);
+        g.setColor(Color.WHITE);
         g.drawOval(x - r, y - r, d, d);
 
         for (int i = 0; i < listOfTab.length; i++) {
@@ -38,7 +38,7 @@ public class MarkingMenuUI {
         double angle = Math.atan2(curY - y, curX - x);
         double temp = angle / (2 * Math.PI / listOfTab.length) + 1;
         int i = (int)Math.floor(temp);
-        g.setColor(Color.WHITE);
+        g.setColor(Color.BLACK);
         g.drawLine(x, y, x + (int) (r * (Math.cos((i-1) * 2 * Math.PI / listOfTab.length))),
                 y + (int) (r * (Math.sin((i-1) * 2 * Math.PI / listOfTab.length))));
         g.drawLine(x, y, x + (int) (r * (Math.cos(i * 2 * Math.PI / listOfTab.length))),
