@@ -65,15 +65,19 @@ class Paint extends JFrame {
 						switch(number){
 							case 0:
 								color = Color.BLACK;
+								j.setSelectedIndex(0);
 								break;
 							case 1:
 								color = Color.RED;
+								j.setSelectedIndex(2);
 								break;
 							case -2:
 								color = Color.YELLOW;
+								j.setSelectedIndex(1);
 								break;
 							case -1:
 								color = Color.BLUE;
+								j.setSelectedIndex(3);
 								break;
 							default:
 						}

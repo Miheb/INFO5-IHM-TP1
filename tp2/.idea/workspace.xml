@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aeae5a60-71ac-4a88-90f3-e428e76944af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/uga/zj/MarkingMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/uga/zj/MarkingMenuUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/uga/zj/paint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$Tool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$Tool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/uga/zj/paint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/uga/zj/paint.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/uga/zj/paint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="74" column="35" selection-start-line="74" selection-start-column="35" selection-end-line="74" selection-end-column="35" />
+            <state relative-caret-position="276">
+              <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -33,12 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/uga/zj/MarkingMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
+            <state relative-caret-position="390">
               <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
-              <folding>
-                <element signature="e#733#734#0" expanded="true" />
-                <element signature="e#763#764#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -46,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/uga/zj/MarkingMenuUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="52" column="74" lean-forward="true" selection-start-line="52" selection-start-column="74" selection-end-line="52" selection-end-column="74" />
+            <state relative-caret-position="494">
+              <caret line="52" column="74" selection-start-line="52" selection-start-column="74" selection-end-line="52" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -93,6 +97,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -115,11 +121,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -183,17 +188,19 @@
       <workItem from="1572218619294" duration="22899000" />
       <workItem from="1572369855558" duration="2000" />
       <workItem from="1572371349042" duration="5312000" />
+      <workItem from="1572383621781" duration="6000" />
+      <workItem from="1573203765609" duration="1419000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32500000" />
+    <option name="totallyTimeSpent" value="33925000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26037195" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26752505" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -202,7 +209,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3120482" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3120482" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -271,26 +278,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/uga/zj/MarkingMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
+        <state relative-caret-position="390">
           <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
-          <folding>
-            <element signature="e#733#734#0" expanded="true" />
-            <element signature="e#763#764#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/uga/zj/MarkingMenuUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="52" column="74" lean-forward="true" selection-start-line="52" selection-start-column="74" selection-end-line="52" selection-end-column="74" />
+        <state relative-caret-position="494">
+          <caret line="52" column="74" selection-start-line="52" selection-start-column="74" selection-end-line="52" selection-end-column="74" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/uga/zj/paint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="74" column="35" selection-start-line="74" selection-start-column="35" selection-end-line="74" selection-end-column="35" />
+        <state relative-caret-position="276">
+          <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
