@@ -2,16 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aeae5a60-71ac-4a88-90f3-e428e76944af" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$Tool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint$Tool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tp2/com/uga/zj/Paint.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/uga/zj/paint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/uga/zj/paint.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/uga/zj/paint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
+            <state relative-caret-position="367">
+              <caret line="189" column="38" selection-start-line="189" selection-start-column="38" selection-end-line="189" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -189,12 +179,12 @@
       <workItem from="1572369855558" duration="2000" />
       <workItem from="1572371349042" duration="5312000" />
       <workItem from="1572383621781" duration="6000" />
-      <workItem from="1573203765609" duration="1419000" />
+      <workItem from="1573203765609" duration="1980000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33925000" />
+    <option name="totallyTimeSpent" value="34486000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -292,8 +282,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/uga/zj/paint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
+        <state relative-caret-position="367">
+          <caret line="189" column="38" selection-start-line="189" selection-start-column="38" selection-end-line="189" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -7,6 +7,7 @@ package com.uga.zj;/////////////////////////////////////////////////////////////
 /* imports *****************************************************************/
 
 import javafx.scene.shape.Circle;
+import javafx.util.Pair;
 
 import static java.lang.Math.*;
 
@@ -28,7 +29,7 @@ import javax.swing.event.*;
 class Paint extends JFrame {
 	String[] list  = {"color","shape","other"};
 	String[] listColor = {"Black","RED","Yellow","BLUE"};
-	Vector<Shape> shapes = new Vector<Shape>();
+	Vector<Pair<Shape,Color>> shapes = new Vector<>();
 	MarkingMenu menu;
 	MarkingMenu menu2;
 
@@ -124,7 +125,7 @@ class Paint extends JFrame {
 				if(path == null) {
 					path = new Path2D.Double();
 					path.moveTo(o.getX(), o.getY());
-					shapes.add(shape = path);
+					shapes.add(new Pair(shape = path,color));
 				}
 				path.lineTo(e.getX(), e.getY());
 				panel.repaint();
@@ -135,7 +136,7 @@ class Paint extends JFrame {
 				Rectangle2D.Double rect = (Rectangle2D.Double)shape;
 				if(rect == null) {
 					rect = new Rectangle2D.Double(o.getX(), o.getY(), 0, 0);
-					shapes.add(shape = rect);
+					shapes.add(new Pair(shape = rect,color));
 				}
 				rect.setRect(min(e.getX(), o.getX()), min(e.getY(), o.getY()),
 				             abs(e.getX()- o.getX()), abs(e.getY()- o.getY()));
@@ -147,7 +148,7 @@ class Paint extends JFrame {
                 Ellipse2D.Double ellipse = (Ellipse2D.Double)shape;
                 if(ellipse == null) {
                     ellipse = new Ellipse2D.Double(o.getX(), o.getY(), 0, 0);
-                    shapes.add(shape = ellipse);
+                    shapes.add(new Pair(shape = ellipse,color));
                 }
                 ellipse.setFrame(min(e.getX(), o.getX()), min(e.getY(), o.getY()),
                         abs(e.getX()- o.getX()), abs(e.getY()- o.getY()));
@@ -183,9 +184,11 @@ class Paint extends JFrame {
 		
 				g2.setColor(Color.WHITE);
 				g2.fillRect(0, 0, getWidth(), getHeight());
-				
-				g2.setColor(color);
-				for(Shape shape: shapes) {
+
+				for(Pair item: shapes) {
+					Shape shape = (Shape) item.getKey();
+					Color c = (Color) item.getValue();
+					g2.setColor(c);
 					g2.draw(shape);
 				}
 				if(menu !=null) {
