@@ -29,9 +29,11 @@ import javax.swing.event.*;
 class Paint extends JFrame {
 	String[] list  = {"color","shape","other"};
 	String[] listColor = {"Black","RED","Yellow","BLUE"};
+	String[] listShape = {"pen","rect","ellipse"};
 	Vector<Pair<Shape,Color>> shapes = new Vector<>();
 	MarkingMenu menu;
 	MarkingMenu menu2;
+	MarkingMenu menu3;
 	boolean isDraw = false;
 
 	class Tool extends AbstractAction
@@ -99,6 +101,39 @@ class Paint extends JFrame {
 				}
 			}
 			menu2 = null;
+			if(menu3!=null){
+				Point cur = e.getPoint();
+				if(menu3.isInMenu(cur)){
+					int num = menu3.getSelectedItem(cur);
+					System.out.println(num);
+
+					switch (num){
+						case 0:
+							panel.removeMouseListener(tool);
+							panel.removeMouseMotionListener(tool);
+							tool = tools[0];
+							panel.addMouseListener(tool);
+							panel.addMouseMotionListener(tool);
+							break;
+						case 1:
+						case -2:
+							panel.removeMouseListener(tool);
+							panel.removeMouseMotionListener(tool);
+							tool = tools[1];
+							panel.addMouseListener(tool);
+							panel.addMouseMotionListener(tool);
+							break;
+						case -1:
+							panel.removeMouseListener(tool);
+							panel.removeMouseMotionListener(tool);
+							tool = tools[2];
+							panel.addMouseListener(tool);
+							panel.addMouseMotionListener(tool);
+							break;
+					}
+				}
+			}
+			menu3 = null;
 			panel.repaint();
 		}
 		public void mouseDragged(MouseEvent e) {
@@ -112,6 +147,11 @@ class Paint extends JFrame {
 							menu2 = new MarkingMenu(listColor,new Point((int)cur.getX() + 70,(int)cur.getY() + 70));
 							menu.active = false;
 							break;
+						case 1:
+						case -2:
+							menu3 = new MarkingMenu(listShape,new Point((int)cur.getX() + 70,(int)cur.getY() + 70));
+							menu.active = false;
+							break;
 					}
 				}
 			}
@@ -119,6 +159,13 @@ class Paint extends JFrame {
 				menu2.setCur(cur);
 				if(!menu2.isInMenu(cur)){
 					menu2 = null;
+					menu.active = true;
+				}
+			}
+			if (menu3 != null && menu3.active) {
+				menu3.setCur(cur);
+				if(!menu3.isInMenu(cur)){
+					menu3 = null;
 					menu.active = true;
 				}
 			}
@@ -223,6 +270,10 @@ class Paint extends JFrame {
 				if(menu2 !=null){
 					menu2.setUI(g2);
 					menu2.updateUI(g2);
+				}
+				if(menu3 !=null){
+					menu3.setUI(g2);
+					menu3.updateUI(g2);
 				}
 			}
 		});

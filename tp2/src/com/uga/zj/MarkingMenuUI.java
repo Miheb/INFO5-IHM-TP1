@@ -51,7 +51,7 @@ public class MarkingMenuUI {
 
         double angle = Math.atan2(curY - y, curX - x);
         int i = (int) Math.floor(angle / (2 * Math.PI / listOfTab.length));
-        System.out.println(i);
+//        System.out.println(i);
         return i;
 
     }
