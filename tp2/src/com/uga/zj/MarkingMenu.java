@@ -1,6 +1,9 @@
 package com.uga.zj;
 
+import javax.swing.event.MouseInputListener;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 
 public class MarkingMenu {
@@ -36,4 +39,7 @@ public class MarkingMenu {
     public int getSelectedItem(Point cur){
         return ui.getSelectedItem(cur);
     }
+
+    public boolean isInMenu(Point cur){ return ui.isInMenu(cur);}
+
 }

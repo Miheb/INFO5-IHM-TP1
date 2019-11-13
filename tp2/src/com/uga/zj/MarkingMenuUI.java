@@ -55,4 +55,13 @@ public class MarkingMenuUI {
         return i;
 
     }
+
+    public boolean isInMenu(Point cur){
+        int curX = (int)cur.getX();
+        int curY = (int)cur.getY();
+
+        int d = (int) Math.floor(Math.sqrt(Math.pow(curX-this.x,2) + Math.pow(curY-this.y,2)));
+
+        return d <= r ? true : false;
+    }
 }

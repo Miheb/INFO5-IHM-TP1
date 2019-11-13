@@ -32,11 +32,13 @@ class Paint extends JFrame {
 	Vector<Pair<Shape,Color>> shapes = new Vector<>();
 	MarkingMenu menu;
 	MarkingMenu menu2;
+	boolean isDraw = false;
 
 	class Tool extends AbstractAction
 	           implements MouseInputListener {
 	    Point o;
 		Shape shape;
+
 		public Tool(String name) { super(name); }
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("using tool " + this);
@@ -54,107 +56,127 @@ class Paint extends JFrame {
 			switch (e.getButton()) {
 				case 1:
 					o = e.getPoint();
-//					if(menu!=null && menu.active==true){
-//						int number = menu.getSelectedItem(e.getPoint());
-//						switch (number) {
-//							case 0:
-//								Point cur = e.getPoint();
-//								menu2 = new MarkingMenu(listColor, cur);
-//								menu.active = false;
-//								panel.repaint();
-//								break;
-//								default:
-//						}
-//					}
-//					else if(menu!=null && menu.active==false && menu2!=null && menu2.active == true){
-//						int number = menu2.getSelectedItem(e.getPoint());
-//						switch(number){
-//							case 0:
-//								color = Color.BLACK;
-//								j.setSelectedIndex(0);
-//								break;
-//							case 1:
-//								color = Color.RED;
-//								j.setSelectedIndex(2);
-//								break;
-//							case -2:
-//								color = Color.YELLOW;
-//								j.setSelectedIndex(1);
-//								break;
-//							case -1:
-//								color = Color.BLUE;
-//								j.setSelectedIndex(3);
-//								break;
-//							default:
-//						}
-//						menu = null;
-//						menu2 = null;
-//						panel.repaint();
-//					}
+					isDraw = true;
 					break;
 
 				case 3:
-					if(menu==null) {
-						o = e.getPoint();
-						menu = new MarkingMenu(list, o);
-						panel.repaint();
-					}
-					else{
-						menu=null;
-						menu2=null;
-						panel.repaint();
-					}
+					o = e.getPoint();
+					menu = new MarkingMenu(list, o);
+					panel.repaint();
 					break;
 				default:
 			}
 		}
-		public void mouseReleased(MouseEvent e) { shape = null; }
-		public void mouseDragged(MouseEvent e) {}
-		public void mouseMoved(MouseEvent e) {
-			Point cur = e.getPoint();
-			if(menu !=null && menu.active)
-				menu.setCur(cur);
-			if(menu2 != null && menu2.active)
-				menu2.setCur(cur);
+		public void mouseReleased(MouseEvent e) {
+			isDraw = false;
+			shape = null;
+			menu = null;
+			if(menu2 !=null){
+				Point cur = e.getPoint();
+				if(menu2.isInMenu(cur)){
+					int num = menu2.getSelectedItem(cur);
+					switch (num){
+						case 0:
+							color = Color.BLACK;
+							j.setSelectedIndex(0);
+							break;
+						case 1:
+							color = Color.RED;
+							j.setSelectedIndex(2);
+							break;
+						case -2:
+							color = Color.YELLOW;
+							j.setSelectedIndex(1);
+							break;
+						case -1:
+							color = Color.BLUE;
+							j.setSelectedIndex(3);
+							break;
+						default:
+					}
+				}else{
+					menu2 = null;
+				}
+			}
+			menu2 = null;
 			panel.repaint();
 		}
+		public void mouseDragged(MouseEvent e) {
+			Point cur = e.getPoint();
+			if (menu != null && menu.active) {
+				menu.setCur(cur);
+				if(menu.isInMenu(cur)){
+					int num = menu.getSelectedItem(cur);
+					switch (num) {
+						case 0:
+							menu2 = new MarkingMenu(listColor,new Point((int)cur.getX() + 70,(int)cur.getY() + 70));
+							menu.active = false;
+							break;
+					}
+				}
+			}
+			if (menu2 != null && menu2.active) {
+				menu2.setCur(cur);
+				if(!menu2.isInMenu(cur)){
+					menu2 = null;
+					menu.active = true;
+				}
+			}
+			panel.repaint();
+		}
+		public void mouseMoved(MouseEvent e) {}
 	}
+
 	
 	Tool tools[] = {
 		new Tool("pen") {
 			public void mouseDragged(MouseEvent e) {
-				Path2D.Double path = (Path2D.Double)shape;
-				if(path == null) {
-					path = new Path2D.Double();
-					path.moveTo(o.getX(), o.getY());
-					shapes.add(new Pair(shape = path,color));
+				if(isDraw) {
+					Path2D.Double path = (Path2D.Double) shape;
+					if (path == null) {
+						path = new Path2D.Double();
+						path.moveTo(o.getX(), o.getY());
+						shapes.add(new Pair(shape = path, color));
+					}
+					path.lineTo(e.getX(), e.getY());
+					panel.repaint();
+				}else{
+					super.mouseDragged(e);
 				}
-				path.lineTo(e.getX(), e.getY());
-				panel.repaint();
 			}
 		},
 		new Tool("rect") {
 			public void mouseDragged(MouseEvent e) {
-				Rectangle2D.Double rect = (Rectangle2D.Double)shape;
-				if(rect == null) {
-					rect = new Rectangle2D.Double(o.getX(), o.getY(), 0, 0);
-					shapes.add(new Pair(shape = rect,color));
+				if(isDraw) {
+					Rectangle2D.Double rect = (Rectangle2D.Double) shape;
+					if (rect == null) {
+						rect = new Rectangle2D.Double(o.getX(), o.getY(), 0, 0);
+						shapes.add(new Pair(shape = rect, color));
+					}
+					rect.setRect(min(e.getX(), o.getX()), min(e.getY(), o.getY()),
+							abs(e.getX() - o.getX()), abs(e.getY() - o.getY()));
+					panel.repaint();
 				}
-				rect.setRect(min(e.getX(), o.getX()), min(e.getY(), o.getY()),
-				             abs(e.getX()- o.getX()), abs(e.getY()- o.getY()));
-				panel.repaint();
+				else{
+					super.mouseDragged(e);
+				}
 			}
 		},
         new Tool("ellipse") {
             public void mouseDragged(MouseEvent e) {
-                Ellipse2D.Double ellipse = (Ellipse2D.Double)shape;
-                if(ellipse == null) {
-                    ellipse = new Ellipse2D.Double(o.getX(), o.getY(), 0, 0);
-                    shapes.add(new Pair(shape = ellipse,color));
-                }
-                ellipse.setFrame(min(e.getX(), o.getX()), min(e.getY(), o.getY()),
-                        abs(e.getX()- o.getX()), abs(e.getY()- o.getY()));
-                panel.repaint();
+            	if(isDraw) {
+					Ellipse2D.Double ellipse = (Ellipse2D.Double) shape;
+					if (ellipse == null) {
+						ellipse = new Ellipse2D.Double(o.getX(), o.getY(), 0, 0);
+						shapes.add(new Pair(shape = ellipse, color));
+					}
+					ellipse.setFrame(min(e.getX(), o.getX()), min(e.getY(), o.getY()),
+							abs(e.getX() - o.getX()), abs(e.getY() - o.getY()));
+					panel.repaint();
+				}
+            	else{
+            		super.mouseDragged(e);
+				}
             }
         }
 
@@ -177,6 +199,7 @@ class Paint extends JFrame {
 			j = new JComboBox<String>(new String[]{"BLACK", "YELLOW", "RED", "BLUE"});
 			add(j);
 		}}, BorderLayout.NORTH);
+
 		add(panel = new JPanel() {
 			public void paintComponent(Graphics g) {
 				super.paintComponent(g);	
