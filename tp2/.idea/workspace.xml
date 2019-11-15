@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aeae5a60-71ac-4a88-90f3-e428e76944af" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/uga/zj/MarkingMenuUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/uga/zj/MarkingMenuUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/uga/zj/paint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/uga/zj/paint.java" afterDir="false" />
-    </list>
+    <list default="true" id="aeae5a60-71ac-4a88-90f3-e428e76944af" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -188,12 +185,12 @@
       <workItem from="1572371349042" duration="5312000" />
       <workItem from="1572383621781" duration="6000" />
       <workItem from="1573203765609" duration="4893000" />
-      <workItem from="1573657251530" duration="9033000" />
+      <workItem from="1573657251530" duration="9196000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46432000" />
+    <option name="totallyTimeSpent" value="46595000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -208,7 +205,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3120482" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3120482" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
